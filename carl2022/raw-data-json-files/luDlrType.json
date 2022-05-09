@@ -1,0 +1,14 @@
+[
+	{
+		"DlrtypeID": "COM",
+		"description": "Commercial"
+	},
+	{
+		"DlrtypeID": "NUMV",
+		"description": "New and Used Motor Vehicles"
+	},
+	{
+		"DlrtypeID": "UMV",
+		"description": "Used Motor Vehicles"
+	}
+]

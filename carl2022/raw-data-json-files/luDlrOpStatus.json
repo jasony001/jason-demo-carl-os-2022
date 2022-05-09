@@ -1,0 +1,10 @@
+[
+	{
+		"DlrOpStatusID": "ACTIVE",
+		"description": "Active"
+	},
+	{
+		"DlrOpStatusID": "INACTI",
+		"description": "Inactive"
+	}
+]

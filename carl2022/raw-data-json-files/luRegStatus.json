@@ -1,0 +1,14 @@
+[
+	{
+		"RegStatusID": "NOTREG",
+		"description": "Not Registered"
+	},
+	{
+		"RegStatusID": "REG",
+		"description": "Registered"
+	},
+	{
+		"RegStatusID": "TERM",
+		"description": "Terminated"
+	}
+]

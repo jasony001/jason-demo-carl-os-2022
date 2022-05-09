@@ -1,0 +1,30 @@
+[
+	{
+		"LegTypeID": "CORP",
+		"description": "Corporation"
+	},
+	{
+		"LegTypeID": "GENPAR",
+		"description": "General Partnership"
+	},
+	{
+		"LegTypeID": "LIMPAR",
+		"description": "Limited Partnership"
+	},
+	{
+		"LegTypeID": "MVDA",
+		"description": "MVDA 2002"
+	},
+	{
+		"LegTypeID": "OFF",
+		"description": "Offsite"
+	},
+	{
+		"LegTypeID": "SOLE",
+		"description": "Sole Proprietor"
+	},
+	{
+		"LegTypeID": "UNKNWN",
+		"description": "Unknown"
+	}
+]

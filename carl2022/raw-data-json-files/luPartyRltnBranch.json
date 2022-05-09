@@ -1,0 +1,10 @@
+[
+	{
+		"PartyRltnBranchID": "B",
+		"description": "Branch"
+	},
+	{
+		"PartyRltnBranchID": "H",
+		"description": "Head Office"
+	}
+]

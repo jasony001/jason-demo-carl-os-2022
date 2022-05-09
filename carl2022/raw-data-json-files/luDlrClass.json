@@ -1,0 +1,42 @@
+[
+	{
+		"DlrClassID": "BROKER",
+		"description": "Broker"
+	},
+	{
+		"DlrClassID": "EXPORT",
+		"description": "Exporter"
+	},
+	{
+		"DlrClassID": "FLEET",
+		"description": "Fleet Lessor"
+	},
+	{
+		"DlrClassID": "GEN",
+		"description": "General Dealer"
+	},
+	{
+		"DlrClassID": "LEASIN",
+		"description": "Lease Finance Dealer"
+	},
+	{
+		"DlrClassID": "MANUFA",
+		"description": "Manufacturer"
+	},
+	{
+		"DlrClassID": "NFP",
+		"description": "Not for Profit"
+	},
+	{
+		"DlrClassID": "OOP",
+		"description": "Out of Province"
+	},
+	{
+		"DlrClassID": "UNKNOW",
+		"description": "Unknown"
+	},
+	{
+		"DlrClassID": "WHOLES",
+		"description": "Wholesaler"
+	}
+]

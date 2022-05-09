@@ -1,0 +1,14 @@
+[
+	{
+		"DlrOpStatusReasonID": "NOSALE",
+		"description": "No Salesperson"
+	},
+	{
+		"DlrOpStatusReasonID": "NOSOFF",
+		"description": "No Salesperson/Off Premises"
+	},
+	{
+		"DlrOpStatusReasonID": "OFFPRE",
+		"description": "Off Premises"
+	}
+]

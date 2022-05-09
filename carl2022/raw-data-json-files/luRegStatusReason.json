@@ -1,0 +1,50 @@
+[
+	{
+		"RegStatusReasonID": "ABANDO",
+		"description": "Abandoned"
+	},
+	{
+		"RegStatusReasonID": "APPROV",
+		"description": "Approved"
+	},
+	{
+		"RegStatusReasonID": "AUTO",
+		"description": "Auto Terminated"
+	},
+	{
+		"RegStatusReasonID": "CANCEL",
+		"description": "Cancelled"
+	},
+	{
+		"RegStatusReasonID": "CONAPP",
+		"description": "Conditional Approval"
+	},
+	{
+		"RegStatusReasonID": "CONEXP",
+		"description": "Conditional Period Expired"
+	},
+	{
+		"RegStatusReasonID": "LAPSED",
+		"description": "Lapsed"
+	},
+	{
+		"RegStatusReasonID": "NOPAY",
+		"description": "No Payment"
+	},
+	{
+		"RegStatusReasonID": "REVOKE",
+		"description": "Revoked"
+	},
+	{
+		"RegStatusReasonID": "SUSP",
+		"description": "Suspended"
+	},
+	{
+		"RegStatusReasonID": "TERMBD",
+		"description": "Terminated By Dealer"
+	},
+	{
+		"RegStatusReasonID": "VOL",
+		"description": "Voluntary"
+	}
+]

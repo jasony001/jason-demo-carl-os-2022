@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "jason-demo-carl-os-2022"
+  },
+  "targets": {
+    "jason-demo-carl-os-2022": {
+      "hosting": {
+        "jason-demo-carl-2022": [
+          "jason-demo-carl-2022"
+        ]
+      }
+    }
+  }
+}

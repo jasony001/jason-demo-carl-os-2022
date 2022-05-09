@@ -1,0 +1,50 @@
+[
+	{
+		"dapartyid": 12796,
+		"dealerpartyid": 125475,
+		"AssignorPartyId": 12796,
+		"daId": 1
+	},
+	{
+		"dapartyid": 52742,
+		"dealerpartyid": 293525,
+		"AssignorPartyId": 52742,
+		"daId": 2
+	},
+	{
+		"dapartyid": 69432,
+		"dealerpartyid": 122714,
+		"AssignorPartyId": 69432,
+		"daId": 3
+	},
+	{
+		"dapartyid": 81835,
+		"dealerpartyid": 145177,
+		"AssignorPartyId": 81835,
+		"daId": 4
+	},
+	{
+		"dapartyid": 184970,
+		"dealerpartyid": 184969,
+		"AssignorPartyId": 184970,
+		"daId": 5
+	},
+	{
+		"dapartyid": 250229,
+		"dealerpartyid": 250197,
+		"AssignorPartyId": 250229,
+		"daId": 6
+	},
+	{
+		"dapartyid": 267538,
+		"dealerpartyid": 270330,
+		"AssignorPartyId": 267538,
+		"daId": 7
+	},
+	{
+		"dapartyid": 283788,
+		"dealerpartyid": 146024,
+		"AssignorPartyId": 90657,
+		"daId": 8
+	}
+]

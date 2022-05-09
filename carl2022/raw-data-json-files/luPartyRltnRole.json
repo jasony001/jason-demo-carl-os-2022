@@ -1,0 +1,214 @@
+[
+    {
+        "PartyRltnRoleID": "DDINTP",
+        "description": "Interested Person"
+    },
+    {
+        "PartyRltnRoleID": "DDLAND",
+        "description": "Landlord"
+    },
+    {
+        "PartyRltnRoleID": "DDOFFS",
+        "description": "Offsite Sale Participant"
+    },
+    {
+        "PartyRltnRoleID": "DDXREF",
+        "description": "Cross Reference"
+    },
+    {
+        "PartyRltnRoleID": "DLOWN",
+        "description": "Owned"
+    },
+    {
+        "PartyRltnRoleID": "FLEETM",
+        "description": "Fleet Manager"
+    },
+    {
+        "PartyRltnRoleID": "IDBUS",
+        "description": "Business Manager"
+    },
+    {
+        "PartyRltnRoleID": "IDCOMR",
+        "description": "Dealer Complaint Rep"
+    },
+    {
+        "PartyRltnRoleID": "IDCONT",
+        "description": "Contact"
+    },
+    {
+        "PartyRltnRoleID": "IDDLRP",
+        "description": "Dealer Principal"
+    },
+    {
+        "PartyRltnRoleID": "IDEMP",
+        "description": "Employee"
+    },
+    {
+        "PartyRltnRoleID": "IDFNMN",
+        "description": "Finance Manager"
+    },
+    {
+        "PartyRltnRoleID": "IDGEN",
+        "description": "General Manager"
+    },
+    {
+        "PartyRltnRoleID": "IDGSMN",
+        "description": "General Sales Manager"
+    },
+    {
+        "PartyRltnRoleID": "IDINTP",
+        "description": "Interested Person"
+    },
+    {
+        "PartyRltnRoleID": "IDLAND",
+        "description": "Landlord"
+    },
+    {
+        "PartyRltnRoleID": "IDLEND",
+        "description": "Lender"
+    },
+    {
+        "PartyRltnRoleID": "IDMARK",
+        "description": "Marketing Manager"
+    },
+    {
+        "PartyRltnRoleID": "IDMECH",
+        "description": "Mechanic"
+    },
+    {
+        "PartyRltnRoleID": "IDNCMN",
+        "description": "New Car Manager"
+    },
+    {
+        "PartyRltnRoleID": "IDOFAM",
+        "description": "Offsite Sale Advertising Manager"
+    },
+    {
+        "PartyRltnRoleID": "IDOFSS",
+        "description": "Offsite Sale Salesperson"
+    },
+    {
+        "PartyRltnRoleID": "IDOFTM",
+        "description": "Offsite Sale Trade Manager"
+    },
+    {
+        "PartyRltnRoleID": "IDREGC",
+        "description": "Registration Contact"
+    },
+    {
+        "PartyRltnRoleID": "IDSALE",
+        "description": "Salesperson"
+    },
+    {
+        "PartyRltnRoleID": "IDSALM",
+        "description": "Sales Manager"
+    },
+    {
+        "PartyRltnRoleID": "IDSEC",
+        "description": "Secretary Treasurer"
+    },
+    {
+        "PartyRltnRoleID": "IDSIGB",
+        "description": "Signing Authority - Bank"
+    },
+    {
+        "PartyRltnRoleID": "IDSIGN",
+        "description": "Signing Authority - Other"
+    },
+    {
+        "PartyRltnRoleID": "IDSIGT",
+        "description": "Signing Authority - Trust"
+    },
+    {
+        "PartyRltnRoleID": "IDUCMN",
+        "description": "Used Car Manager"
+    },
+    {
+        "PartyRltnRoleID": "IDUREG",
+        "description": "Unregistered Salesperson"
+    },
+    {
+        "PartyRltnRoleID": "IIASS",
+        "description": "Associate"
+    },
+    {
+        "PartyRltnRoleID": "IIASSC",
+        "description": "Associated Person"
+    },
+    {
+        "PartyRltnRoleID": "IIREL",
+        "description": "Relative"
+    },
+    {
+        "PartyRltnRoleID": "IIXREF",
+        "description": "Cross Reference"
+    },
+    {
+        "PartyRltnRoleID": "ILASSC",
+        "description": "Associated Person"
+    },
+    {
+        "PartyRltnRoleID": "ILDIR",
+        "description": "Director"
+    },
+    {
+        "PartyRltnRoleID": "ILFO",
+        "description": "Financial Officer"
+    },
+    {
+        "PartyRltnRoleID": "ILINTP",
+        "description": "Interested Person"
+    },
+    {
+        "PartyRltnRoleID": "ILOFF",
+        "description": "Officer"
+    },
+    {
+        "PartyRltnRoleID": "ILOWN",
+        "description": "Owner"
+    },
+    {
+        "PartyRltnRoleID": "ILPART",
+        "description": "Partner"
+    },
+    {
+        "PartyRltnRoleID": "ILSHAR",
+        "description": "Shareholder"
+    },
+    {
+        "PartyRltnRoleID": "LEASEM",
+        "description": "Leasing Manager"
+    },
+    {
+        "PartyRltnRoleID": "LLAMAL",
+        "description": "Amalgamated With"
+    },
+    {
+        "PartyRltnRoleID": "LLASSC",
+        "description": "Associated Person"
+    },
+    {
+        "PartyRltnRoleID": "LLDUAL",
+        "description": "Dual With"
+    },
+    {
+        "PartyRltnRoleID": "LLINTP",
+        "description": "Interested Person"
+    },
+    {
+        "PartyRltnRoleID": "LLOWN",
+        "description": "Owner\/Owned By"
+    },
+    {
+        "PartyRltnRoleID": "LLPART",
+        "description": "Partnership"
+    },
+    {
+        "PartyRltnRoleID": "LLSHAR",
+        "description": "Shareholder"
+    },
+    {
+        "PartyRltnRoleID": "LLXREF",
+        "description": "Cross Reference"
+    }
+]
