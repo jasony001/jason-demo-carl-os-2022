@@ -403,6 +403,7 @@ main-page-test-criteria div {
     border-bottom: 20px solid transparent;
     flex:1;
     z-index:2;
+    cursor: pointer;
   }
   
   .slider--left {
