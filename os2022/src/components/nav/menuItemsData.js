@@ -37,12 +37,11 @@ const getMenuItems = (testCriteria) => {
                     { id:"s2020", label: "dealership applications", link:"dealership applications" },
                     { id:"s2030", label: "dealership invoices", link:"dealership invoices" },
                     { id:"s2040", label: "notification subscription", link:"notification subscription" },
-                    { id:"s2050", label: "Add/Remove Dealer Administrators", link:"add remove dealer administrators " },
                 ],
                 showSubmenu: false
             }];
         
-        let dealerActions = menuItems.find(i => i.id ==="t10");
+        let dealerActions = menuItems.find(i => i.id ==="t20");
 
         if (testCriteria.dealers.some(d => d.regStatusID === "REG" && d.opStatusID === "Active")) {
             dealerActions.submenu = [...dealerActions.submenu, { label: "omvic certificate", link:"omvic certificate" }]
@@ -50,7 +49,7 @@ const getMenuItems = (testCriteria) => {
     }
 
     if (hasODPSRole){
-        let dealerActions = menuItems.find(i => i.id ==="t10");
+        let dealerActions = menuItems.find(i => i.id ==="t20");
         dealerActions.submenu = [...dealerActions.submenu, { id:"s2050", label: "Add/Remove Dealer Administrators", link:"add remove dealer administrators " }]
     }
 

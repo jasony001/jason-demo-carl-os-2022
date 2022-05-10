@@ -70,7 +70,6 @@ const Home = ({testCriteria, headerText, mainComponentChanged}) => {
 
     return (
         <div className='home'>
-            {`[current stage]${stage}[current stage]`}
             {
                 (
                 <>

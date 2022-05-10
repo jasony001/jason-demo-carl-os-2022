@@ -24,7 +24,11 @@ const MainPageTestCriteriaSideBar = ({testCriteria}) => {
                                 return (
                                     <React.Fragment key={k}>
                                         <div>{k}: </div>
-                                        <div>{testCriteria.portalUser[k]}</div>
+                                        <div>
+                                            {
+                                            (typeof(testCriteria.portalUser[k]) === "boolean") ? (testCriteria.portalUser[k]?"Yes":"No") : testCriteria.portalUser[k]
+                                            }
+                                        </div>
                                     </React.Fragment>
                                 )
                             })

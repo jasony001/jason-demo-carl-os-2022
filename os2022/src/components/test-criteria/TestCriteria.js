@@ -66,6 +66,10 @@ const TestCriteria = ({testCriteria, testCriteriaChanged}) => {
                                     }
                                 </select>
                             </div>
+                            <div>T&amp;C or LAT T&amp;C</div>
+                            <div>
+                                <input type="checkbox" name="portalUser-tc" checked={testCriteria.portalUser.tc} onChange={ e => handleChange(e)}/>
+                            </div>
                         </div>
                     </div>
                     <div className="test-criteria-dealer-section">

@@ -189,7 +189,7 @@ nav.top-menu>ul> li + li {
   z-index:1;
   left:0;
   top:1.7em;
-  width: auto;
+  width: 120%;
   
   flex-direction: column;
   list-style-type: none;
@@ -268,13 +268,18 @@ nav.top-menu>ul> li + li {
   top:1em;
   right:3em;
   display:grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 3fr 2fr;
   font-size:1.2rem;
   line-height: 1rem;
   color: coral;
   margin-right:0;
-  row-gap: .2em;
+  row-gap: .5em;
   text-transform: none;
+  border: 1px solid;
+  border-color: aliceblue;
+  color:white;
+  background-color:darkcyan;
+  padding:.5em;
 }
 
 main-page-test-criteria div {
@@ -294,6 +299,11 @@ main-page-test-criteria div {
   position: relative;
 }
 
+.main-page-main h3 {
+    font-size: 2rem;
+    color:#1547aa
+}
+
 
 .myapp-history{
   border: 1px solid;
@@ -306,13 +316,18 @@ main-page-test-criteria div {
 }
 
 
-.myapp-newapp{
-  padding:.5em 1em;
-  border: 1px solid;
-  width:70%;
-
+.myapp-newapp {
+    padding:.5em 1em;
+    border: 1px solid;
+    width:70%;
+    font-size: 1.5rem;
+    color: black;
 }
 
+.myapp-newapp > div:hover {
+    cursor: pointer;
+    text-shadow: 2px 2px #FFFFFF;
+}
 
 /* home */
 .home {
@@ -321,7 +336,7 @@ main-page-test-criteria div {
 
 .home-selected {
   color:blueviolet;
-  font-size: 1en;
+  font-size: 1.5rem;
 }
 
 .home-selected>div:hover {
@@ -345,14 +360,15 @@ main-page-test-criteria div {
   margin-left: 4em;
 }
 
-.home-option {
+.home-options {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
 .home-extra {
   color:rgb(157, 150, 91);
-  font-size: 1.2em;
+  font-size: 1.5rem;
 }
 
 .home-option>div:hover {
@@ -361,8 +377,8 @@ main-page-test-criteria div {
 }
 .home-option {
   color:cornflowerblue;
-  font-size: 1.5em;
-  margin-top: 1em;
+  font-size: 1.5rem;
+  margin-top: .5rem;
   flex: 1 1 0;
 }
 
@@ -384,3 +400,143 @@ main-page-test-criteria div {
     border-left: 40px solid cadetblue;
   }
   
+
+  .tab-main {
+    min-height: 20vh;
+
+    border: 1px solid;
+    border-radius: 0 0 5px 5px;
+    border-top-width: 1px;
+    
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-color: darkseagreen;
+
+    padding:0.5em 1em;
+    color: black;
+
+    text-transform: none;
+}
+
+  .tab-header-row {
+      display:flex;
+      justify-content: flex-start;
+      position: relative;
+
+  }
+
+  .tab-header {
+      border: 1px solid;
+      border-radius: 5px 5px 0 0;
+      border-left-width: 0;
+      border-right-width: 1;
+      border-bottom-width: 0;
+      padding: 0 .5em;
+      text-transform: capitalize;
+      border-color: darkseagreen;
+      background-color: rgb(7, 105, 180);
+  }
+
+  .tab-header:first-child {
+    border-left-width: 1px;
+  }
+
+  .tab-header:last-child {
+    border-right-width: 1px;
+  }
+
+  .tab-header.tab-header--selected {
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-style: outset;
+    color:rgb(206, 232, 129);
+  }
+
+
+  .myprofile-aboutme-grid {
+      display:grid;
+      grid-template-columns: 1fr 5fr;
+      font-size:1.5rem;
+      column-gap: 2em;
+      height: auto;
+  }
+
+  .myprofile-aboutme-grid > div:nth-child(4n+1),
+  .myprofile-aboutme-grid > div:nth-child(4n+2)
+  {
+    color: #102e6e;
+  }
+
+
+  .myprofile-aboutme-grid input {
+    font-size:1.5rem;
+    width: 60%;
+    border-radius: 5px;
+    border-style: none;
+}
+
+.rltn-grid {
+    display:grid;
+    grid-template-columns: repeat(6, 1fr);
+    width:70%;
+    font-size:1.2rem;
+    column-gap: 2px;
+}
+
+.rltn-grid-header {
+    font-weight: 700;
+    background-color: #1b52c6;
+    color: white;
+    padding: .5em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    line-height: 1.5em;
+}
+
+
+.rltn-grid-odd-row {
+    background-color: #f4f6f0;
+    color: black;
+    padding: .5em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    line-height: 1.5em;
+}
+
+
+.rltn-grid-even-row {
+    background-color: #ebd8ec;
+    color: black;
+    padding: .5em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    line-height: 1.5em;
+}
+.rltn-grid-section-title {
+    margin-top:2em;
+}
+.myprofile-rltns > .rltn-grid-section-title:first-child {
+    margin-top: 0;
+}
+
+.icons-cell {
+    display: flex;
+    justify-content: space-around;
+}
+
+.icons-cell > .fa-solid {
+    cursor: pointer;
+}
+
+
+.paid-invoice-grid {
+    display:grid;
+    grid-template-columns: repeat(8, 1fr);
+    width:85%;
+    font-size:1.2rem;
+    column-gap: 2px;
+}
