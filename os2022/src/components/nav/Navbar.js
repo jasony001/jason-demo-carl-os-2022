@@ -4,7 +4,6 @@ import React from 'react'
 const Navbar = ({mainComponentChanged, menuItems, setMenuItems}) => {
 
     return (
-
         <nav className="top-menu">
             {
                 menuItems && menuItems.length > 0 && 

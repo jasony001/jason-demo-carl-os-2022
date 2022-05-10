@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Home = ({testCriteria, headerText, mainComponentChanged}) => {
+const Home = ({testCriteria, mainComponentChanged}) => {
     let hasODPSRole = testCriteria.dealers.some(d => d.userHasODPSRole)
     let hasDARole = testCriteria.dealers.some(d => d.userIsDA)
 
@@ -11,12 +11,12 @@ const Home = ({testCriteria, headerText, mainComponentChanged}) => {
         { key: "0", value:(<div>What would you like to do today? </div>), display: true },
             { key: "0.1", value:(<div>Apply to become a salesperson</div>), extra:(<div>definitions about requirements to apply, what salesperson means, list preconditions</div>), display: true },
                 { key: "0.1.1", value:(<div>I am applying to work for an Ontario Dealer</div>), extra: "Some text explanation", display: true },
-                    { key: "0.1.1.1", value:(<div onClick={() => mainComponentChanged("s1020")}>Start my Individual Application</div>), display: (testCriteria.portalUser.regStatusID === "NONE" || testCriteria.portalUser.regStatusID === "NOTREG") },
-                    { key: "0.1.1.2", value: (<div onClick={() => mainComponentChanged("s1020")}>Start my Individual Reapply Application – Expired over 60 days</div>), display: (testCriteria.portalUser.regStatusID === "TERM" && testCriteria.portalUser.regExpiry === "ExpiredOver60Days") },
+                    { key: "0.1.1.1", value:(<div onClick={() => mainComponentChanged("s1020")}>Start my Individual Application</div>), display: (testCriteria.portalUser.regStatusId === "NONE" || testCriteria.portalUser.regStatusId === "NOTREG") },
+                    { key: "0.1.1.2", value: (<div onClick={() => mainComponentChanged("s1020")}>Start my Individual Reapply Application – Expired over 60 days</div>), display: (testCriteria.portalUser.regStatusId === "TERM" && testCriteria.portalUser.regExpiryDate === "Over60DaysAgo") },
         
                 { key: "0.1.2", value:(<div>I am applying to work for an Out of Province dealer</div>), display:true, extra:"Some text explaining about out of province"},
-                    { key: "0.1.2.1", value:(<div onClick={() => mainComponentChanged("s1020")}>Start my Outside Ontario Individual Application</div>), display: (testCriteria.portalUser.regStatusID === "NONE" || testCriteria.portalUser.regStatusID === "NOTREG")},
-                    { key: "0.1.2.2", value:(<div onClick={() => mainComponentChanged("s1020")}>Start my Outside Ontario Individual Reapply Application – Expired over 60 days</div>), display: (testCriteria.portalUser.regStatusID === "TERM" && testCriteria.portalUser.regExpiry === "ExpiredOver60Days") },
+                    { key: "0.1.2.1", value:(<div onClick={() => mainComponentChanged("s1020")}>Start my Outside Ontario Individual Application</div>), display: (testCriteria.portalUser.regStatusId === "NONE" || testCriteria.portalUser.regStatusId === "NOTREG")},
+                    { key: "0.1.2.2", value:(<div onClick={() => mainComponentChanged("s1020")}>Start my Outside Ontario Individual Reapply Application – Expired over 60 days</div>), display: (testCriteria.portalUser.regStatusId === "TERM" && testCriteria.portalUser.regExpiryDate === "Over60DaysAgo") },
         
             { key: "0.2", value:(<div>Apply to become a dealer</div>), extra:"Display definitions, requirements to apply, list preconditions"},
                 { key: "0.2.1", value:(<div>I am applying for registration as an Ontario dealer</div>), display:true, extra: (<><div>Some text explanation</div><div>Do you have a Dealer Sales and Service Agreement (DSSA) with a manufacturer?</div></>) },
@@ -35,11 +35,14 @@ const Home = ({testCriteria, headerText, mainComponentChanged}) => {
                 { key: "0.2.2", value:(<div>I am applying for registration as an Out of Province dealer</div>), display:true, extra: "Some text explaining about out of province" },
                     { key : "0.2.2.1", value:(<div onClick={() => mainComponentChanged("s1020")}>Start my Outside Ontario Business Application</div>), display:true},
                     { key : "0.2.2.2", value:(<div onClick={() => mainComponentChanged("s1020")}>Start my Outside Ontario Business Reapply Application</div>), display:true},
+            { key:"0.d", value:(<div>Complete a no-fee Application as an Interested Person</div>), extra:"explanation of what this term means and more" },
+                { key: "0.d.1", value:(<div onClick={() => mainComponentChanged("s1020")}>Start my Individual Application</div>), display: (testCriteria.portalUser.regStatusId === "NONE" || testCriteria.portalUser.regStatusId === "NOTREG") },
+                { key: "0.d.2", value: (<div onClick={() => mainComponentChanged("s1020")}>Start my Individual Reapply Application – Expired over 60 days</div>), display: (testCriteria.portalUser.regStatusId === "TERM" && testCriteria.portalUser.regExpiryDate === "Over60DaysAgo") },
 
             { key:"0.3", value:(<div>I received an email invitation to complete an OMVIC Application (link to My Applications)</div>) },
             { key:"0.4", value:(<div onClick={() => mainComponentChanged("s1010")}>Review my profile (link to My Profile)</div>)},
             { key: "0.5", value:(<div onClick={() => mainComponentChanged("s1020")}>Submit an application</div>), display:true},
-            { key: "0.6", value:(<div onClick={() => mainComponentChanged("s1040")}>View my OMVIC certificate</div>), display: (testCriteria.portalUser.regStatusID==="REG")},
+            { key: "0.6", value:(<div onClick={() => mainComponentChanged("s1040")}>View my OMVIC certificate</div>), display: (testCriteria.portalUser.regStatusId==="REG")},
             { key: "0.7", value:(<div onClick={() => mainComponentChanged("s1030")}>View an invoice or receipt</div>), display:true},
             { key: "0.8", value:(<div onClick={() => mainComponentChanged("s2020")}>Submit an application for my dealer </div>), display: hasDARole },
             { key: "0.9", value:(<div>View dealer’s OMVIC certificate</div>), display: hasDARole||hasODPSRole },

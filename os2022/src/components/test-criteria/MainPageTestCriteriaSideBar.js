@@ -1,15 +1,20 @@
 import React from 'react'
 const MainPageTestCriteriaSideBar = ({testCriteria}) => {
-
     const getDealers = () => {
         const filteredDealers = testCriteria.dealers.filter(d => d.userIsDA || d.userHasODPSRole)
         return filteredDealers
     }
-    const dealersWithDAODPSRole = testCriteria.dealers.filter(d => d.userIsDA || d.userHasODPSRole)
-    const selectedDealer = 
-        testCriteria.selectedDealerId ? testCriteria.dealers.find(d => d.id === testCriteria.selectedDealerId) :
-        dealersWithDAODPSRole.length === 0 ? undefined :
-        (        dealersWithDAODPSRole.length === 1 ? dealersWithDAODPSRole[0] : testCriteria.dealers.find(d => d.id === testCriteria.selectedDealerId));
+
+    const getSelectedDealerName = () => {
+        const selectedDealer = testCriteria.dealers.find(d => d.id+"" === testCriteria.selectedDealerId+"")
+        const name = selectedDealer ? selectedDealer.name : ""
+        return name
+    }
+    // const dealersWithDAODPSRole = testCriteria.dealers.filter(d => d.userIsDA || d.userHasODPSRole)
+    // const selectedDealer = 
+    //     testCriteria.selectedDealerId ? testCriteria.dealers.find(d => d.id === testCriteria.selectedDealerId) :
+    //     dealersWithDAODPSRole.length === 0 ? undefined :
+    //     (        dealersWithDAODPSRole.length === 1 ? dealersWithDAODPSRole[0] : testCriteria.dealers.find(d => d.id === testCriteria.selectedDealerId));
 
 
     return (
@@ -33,17 +38,14 @@ const MainPageTestCriteriaSideBar = ({testCriteria}) => {
                                 )
                             })
                         }
-                        {
-                            selectedDealer && 
-                            (
+
                                 <>
                                     <div className='test-criteria-sidebar-header'>Selected Dealer</div>
                                     <div className='test-criteria-sidebar-header'></div>  
-                                    <div>{selectedDealer.name}</div>
-                                    <div>{(dealersWithDAODPSRole.length > 1) ? "deselect" : ""}</div>
+                                    <div>{ getSelectedDealerName() }</div>
+                                    <div></div>
                                 </>
-                            )
-                        }
+                          
                         {
                             getDealers().length > 0 && (
                                 <>

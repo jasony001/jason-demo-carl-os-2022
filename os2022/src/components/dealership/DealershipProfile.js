@@ -1,13 +1,12 @@
+import React from 'react'
 
-const DealershipProfile = ({testCriteria}) => {
-    let { RegStatusID, RegExpiry, RefusedRevoked, RltnInRegDealer, RltnInNotRegDealer, 
-        DealerRegStatusID, DealerOpStatusID, DealerRefusedRevoked, DealerIsBranch,
-        DealerClassID, DealerSubclassID,
-        DealerRegExpiry } = testCriteria
-      
+const DealershipProfile = ( { testCriteria } ) => {
+   
     return (
-        <h1>Dealership Profile</h1>
-    )
+        <>
+            <div> dealer profile main content</div>
+        </>
+    )   
 }
 
 export default DealershipProfile

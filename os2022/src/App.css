@@ -25,6 +25,16 @@ body {
   padding:0.5em 1em;
   row-gap: .5em;
   column-gap: .5em;
+  flex:8;
+}
+
+.test-criteria > div {
+    border: 1px solid lightcyan;
+    padding: .5em 1em;
+}
+
+.test-criteria > div+div{
+    margin-top:.5em;
 }
 
 .test-criteria-portal-user {
@@ -163,6 +173,8 @@ nav.top-menu>ul {
   list-style: none;
   background-color: aliceblue;
   margin-left: 2em;
+  width:fit-content;
+  padding-right:2em;
 }
 
 nav.top-menu>ul>li {
@@ -248,7 +260,6 @@ nav.top-menu>ul> li + li {
   height:100%;
   display:flex;
   flex-direction: column;
-  flex:1;
   
 }
 
@@ -260,7 +271,7 @@ nav.top-menu>ul> li + li {
 
 .main {
     overflow-y: auto;
-    flex:1;
+    flex:99;
 }
 
 .main-page-test-criteria {
@@ -291,7 +302,7 @@ main-page-test-criteria div {
 .main-page-main {
   flex:5;
   background-color:lightblue;
-  color:white;
+  color:#1547aa;
   font-size: 1.5em;
   padding:1em 2em;
   line-height: 1.5em;
@@ -390,14 +401,16 @@ main-page-test-criteria div {
     height: 0;
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent;
+    flex:1;
+    z-index:2;
   }
   
   .slider--left {
-    border-right: 40px solid cadetblue;
+    border-right: 40px solid rgb(216, 119, 50);
   }
   
   .slider--right {
-    border-left: 40px solid cadetblue;
+    border-left: 40px solid rgb(216, 119, 50);
   }
   
 
@@ -436,6 +449,7 @@ main-page-test-criteria div {
       text-transform: capitalize;
       border-color: darkseagreen;
       background-color: rgb(7, 105, 180);
+      color:white;
   }
 
   .tab-header:first-child {

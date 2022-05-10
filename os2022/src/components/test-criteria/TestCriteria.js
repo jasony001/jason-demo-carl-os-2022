@@ -3,7 +3,9 @@ import MainPageTestCriteriaSideBar from './MainPageTestCriteriaSideBar'
 
 const TestCriteria = ({testCriteria, testCriteriaChanged}) => {
 
+
     const handleChange = e => {
+
         let key  = e.target.name
         let value = (e.target.type !== "checkbox") ? e.target.value.trim() : e.target.checked;
 
@@ -72,6 +74,39 @@ const TestCriteria = ({testCriteria, testCriteriaChanged}) => {
                             </div>
                         </div>
                     </div>
+                    <div>
+                        <div className="test-criteria-section-title">Selected Dealer</div>
+                        <div style={{display:"flex",paddingLeft:"2em", paddingTop:"1em",paddingBottom:"1em"}}>
+                            
+                            {
+                                testCriteria.dealers.map(d => {
+                                    return (
+                                        <div key={d.id} style={{paddingRight:"1em"}}>
+                                            <label htmlFor={`select-dealer-${d.id}`} name='rbSelectDealer'>{d.name}</label>
+                                            <input type="radio" 
+                                                id={`select-dealer-${d.id}`} 
+                                                name='selectedDealerId' 
+                                                onChange={ e => handleChange(e)}
+                                                checked={testCriteria.selectedDealerId+"" === d.id+""}
+                                                value={d.id}
+                                            ></input>
+
+                                        </div>
+                                    )
+                                })
+                            }
+                            <div>
+                                <label htmlFor={`select-dealer-0`} name='rbSelectDealer'>Deselect all</label>
+                                <input type="radio" 
+                                    id={`select-dealer-0`} 
+                                    name='selectedDealerId' 
+                                    onChange={ e => handleChange(e)}
+                                    checked={!testCriteria.selectedDealerId}
+                                    value=""
+                                ></input>
+                            </div>
+                        </div>
+                    </div>
                     <div className="test-criteria-dealer-section">
                         {
                             testCriteria.dealers.map(d => {
@@ -135,13 +170,16 @@ const TestCriteria = ({testCriteria, testCriteriaChanged}) => {
                                                     name={`dealer-${d.id}-opStatusId`}  
                                                     id ={`dealer-${d.id}-opStatusId-active`} 
                                                     checked={d.opStatusId==="Active"}
-                                                    onChange={ e => handleChange(e)}></input>
+                                                    onChange={ e => handleChange(e)}
+                                                    value="Active"
+                                                    />
                                                 <label htmlFor={`dealer-${d.id}-opStatusId-inactive`}  >Inactive</label>
                                                 <input type="radio" 
                                                     name={`dealer-${d.id}-opStatusId`} 
                                                     id={`dealer-${d.id}-opStatusId-inactive`}  
                                                     checked={d.opStatusId==="Inactive"}
-                                                    onChange={ e => handleChange(e)}></input>
+                                                    onChange={ e => handleChange(e)}
+                                                    value="Inactive"/>
                                             </div>
 
 

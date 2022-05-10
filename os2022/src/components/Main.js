@@ -9,33 +9,10 @@ import OMVICEvents from "./common/OMVICEvents";
 import Support from './common/Support'
 import MainPageTestCriteriaSideBar from './test-criteria/MainPageTestCriteriaSideBar'
 import OmvicCertificate  from "./individual/OmvicCertificate";
-import DealershipProfile from "./dealership/DealershipProfile";
-import DealershipApplications from './dealership/DealershipApplications'
+import DeashipMain from './dealership/DealershipMain'
+import { getMenuItemById } from "./nav/menuItemsData";
 
-const Main = ({ testCriteria, pageId, mainComponentChanged, setMenuItems, menuItems }) => {
-
-    const getMenuItemById = (id) => {
-        let xmi;        
-        if (menuItems && menuItems.length > 0){
-            menuItems.forEach(mi => {
-                if (mi.id === id){
-                    xmi = mi;
-                }
-
-                if (mi.submenu && mi.submenu.length > 0) {
-                    mi.submenu.forEach(smi => {
-                        if (smi.id === id) {
-                            xmi = smi;
-                        }
-                    })
-                }
-            })
-        }
-        
-        return xmi;
-    }
-
-
+const Main = ({ testCriteria, pageId, mainComponentChanged, setMenuItems, menuItems, selectDealer }) => {
     return (
         <div className="main">
             <Navbar 
@@ -46,9 +23,9 @@ const Main = ({ testCriteria, pageId, mainComponentChanged, setMenuItems, menuIt
             />
             <div className="main-page">
                 {
-                    getMenuItemById(pageId) && (
+                    getMenuItemById(menuItems, pageId) && (
                     <>
-                        <header className="main-page-header">{ getMenuItemById(pageId).label }</header>
+                        {/* <header className="main-page-header">{ getMenuItemById(pageId).label }</header> */}
                         <div className = "main-page-main">
                             <MainPageTestCriteriaSideBar testCriteria={testCriteria}/>
                             { pageId === "t00" && (<Home testCriteria = {testCriteria} mainComponentChanged= {mainComponentChanged}/>) }
@@ -59,8 +36,12 @@ const Main = ({ testCriteria, pageId, mainComponentChanged, setMenuItems, menuIt
                             { pageId === "t40" && (<OMVICEvents testCriteria = {testCriteria}/>) }
                             { pageId === "t50" && (<Support testCriteria = {testCriteria}/>) }
                             { pageId === "s1040" && (<OmvicCertificate testCriteria = {testCriteria}/>) }
-                            { pageId === "s2010" && (<DealershipProfile testCriteria = {testCriteria}/>) }
-                            { pageId === "s2020" && (<DealershipApplications testCriteria = {testCriteria}/>) }
+
+                            { pageId.startsWith("s20") && (<DeashipMain testCriteria = {testCriteria} selectDealer={selectDealer} pageId={pageId} menuItems={menuItems} />) }
+                            {/* { pageId === "s2020" && (<DealershipApplications testCriteria = {testCriteria} selectDealer={selectDealer} />) }
+                            { pageId === "s2030" && (<DealershipInvoices testCriteria = {testCriteria} selectDealer={selectDealer} />) }
+                            { pageId === "s2040" && (<DealershipNotifications testCriteria = {testCriteria} selectDealer={selectDealer} />) }
+                            { pageId === "s2050" && (<AssignDAs testCriteria = {testCriteria} selectDealer={selectDealer} />) } */}
                         </div>
                     </>
                 )}

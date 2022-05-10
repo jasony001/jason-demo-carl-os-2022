@@ -43,18 +43,43 @@ const getMenuItems = (testCriteria) => {
         
         let dealerActions = menuItems.find(i => i.id ==="t20");
 
-        if (testCriteria.dealers.some(d => d.regStatusID === "REG" && d.opStatusID === "Active")) {
-            dealerActions.submenu = [...dealerActions.submenu, { label: "omvic certificate", link:"omvic certificate" }]
+        if (testCriteria.dealers.some(d => d.regStatusId === "REG" && d.opStatusId === "Active")) {
+            dealerActions.submenu = [...dealerActions.submenu, { id:"s2060", label: "omvic certificate", link:"omvic certificate" }]
         }
     }
 
     if (hasODPSRole){
-        let dealerActions = menuItems.find(i => i.id ==="t20");
-        dealerActions.submenu = [...dealerActions.submenu, { id:"s2050", label: "Add/Remove Dealer Administrators", link:"add remove dealer administrators " }]
+        if (!testCriteria.selectedDealerId || 
+            testCriteria.dealers.find(d => d.id + "" === testCriteria.selectedDealerId + "").hasODPSRole)
+            {
+                let dealerActions = menuItems.find(i => i.id ==="t20");
+                dealerActions.submenu = [...dealerActions.submenu, { id:"s2050", label: "Add/Remove Dealer Administrators", link:"add remove dealer administrators " }]
+            }
     }
 
     
     return menuItems;
 }
 
-export default getMenuItems;
+const getMenuItemById = (menuItems, id) => {
+    let xmi;        
+    if (menuItems && menuItems.length > 0){
+        menuItems.forEach(mi => {
+            if (mi.id === id){
+                xmi = mi;
+            }
+
+            if (mi.submenu && mi.submenu.length > 0) {
+                mi.submenu.forEach(smi => {
+                    if (smi.id === id) {
+                        xmi = smi;
+                    }
+                })
+            }
+        })
+    }
+    
+    return xmi;
+}
+
+export { getMenuItemById, getMenuItems };

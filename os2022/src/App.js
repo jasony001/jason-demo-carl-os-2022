@@ -3,7 +3,7 @@ import './App.css';
 import React from 'react'
 import TestCriteria from './components/test-criteria/TestCriteria';
 import Main from './components/Main'
-import getMenuItems from './components/nav/menuItemsData';
+import { getMenuItems } from './components/nav/menuItemsData';
 
 function App() {
 
@@ -79,7 +79,6 @@ function App() {
             tc = defaultTestCriteria
         }
 
-        console.log(tc);
         setTestCriteria(tc)
     }, [])
 
@@ -97,6 +96,9 @@ function App() {
             updatedDealer = { ...updatedDealer, [key]: value }
             let updatedDealerList = ct.dealers.map(d => (d.id + "" === id + "") ? updatedDealer : d);
             updatedTestCriteria = { ...ct, dealers: updatedDealerList }
+        } else {
+            updatedTestCriteria = { ...testCriteria, [name]: value }
+
         }
 
         return updatedTestCriteria;
@@ -105,9 +107,14 @@ function App() {
     const testCriteriaChanged = (name, value) => {
         setTestCriteria(prev => {
             let ut = getUpdatedTestCriteria(prev, name, value)
+
             localStorage.setItem("testCriteria", JSON.stringify(ut))
             return ut;
         })
+    }
+
+    const selectDealer = (dealerId) => {
+        setTestCriteria(prev => { return { ...prev, selectedDealerId: dealerId } } )
     }
 
     return (
@@ -130,6 +137,7 @@ function App() {
                     mainComponentChanged={mainComponentChanged}
                     setMenuItems={setMenuItems}
                     menuItems={menuItems}
+                    selectDealer = { selectDealer }
                 />
             }
         </div>
