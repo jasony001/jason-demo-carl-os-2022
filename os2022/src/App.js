@@ -72,7 +72,12 @@ function App() {
     }
 
     React.useEffect(() => {
-        const savedCriteriaString = undefined //localStorage.getItem("testCriteria");
+        const clean = localStorage.getItem("clean")
+        if (!clean){
+            localStorage.clear()
+            localStorage.setItem("clean", (1 + Math.random()) + "")
+        }
+        const savedCriteriaString = localStorage.getItem("testCriteria");
         let tc 
         if (savedCriteriaString) {
             let savedCriteria = JSON.parse(savedCriteriaString)
@@ -111,7 +116,7 @@ function App() {
         setTestCriteria(prev => {
             let ut = getUpdatedTestCriteria(prev, name, value)
 
-            // localStorage.setItem("testCriteria", JSON.stringify(ut))
+            localStorage.setItem("testCriteria", JSON.stringify(ut))
             return ut;
         })
     }
