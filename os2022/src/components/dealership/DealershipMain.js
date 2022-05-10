@@ -64,12 +64,12 @@ const DealershipMain = ( { testCriteria, selectDealer, pageId, menuItems } ) => 
                                 )
                             }
                             </h4>
-                            { pageId === "s2010" && (<DealershipProfile testCriteria = {testCriteria}/>) }
-                            { pageId === "s2020" && (<DealershipApplications testCriteria = {testCriteria} />) }
-                            { pageId === "s2030" && (<DealershipInvoices testCriteria = {testCriteria} />) }
-                            { pageId === "s2040" && (<DealershipNotifications testCriteria = {testCriteria} />) }
-                            { pageId === "s2050" && (<AssignDAs testCriteria = {testCriteria} />) }                            
-                            { pageId === "s2060" && (<DealershipOmvicCertificate testCriteria = {testCriteria} />) }                            
+                            { pageId === "s2010" && (<DealershipProfile testCriteria = {testCriteria} dealer = { dealer }/>) }
+                            { pageId === "s2020" && (<DealershipApplications testCriteria = {testCriteria} dealer = { dealer }/>) }
+                            { pageId === "s2030" && (<DealershipInvoices testCriteria = {testCriteria} dealer = { dealer }/>) }
+                            { pageId === "s2040" && (<DealershipNotifications testCriteria = {testCriteria} dealer = { dealer }/>) }
+                            { pageId === "s2050" && (<AssignDAs testCriteria = {testCriteria} dealer = { dealer }/>) }                            
+                            { pageId === "s2060" && (<DealershipOmvicCertificate testCriteria = {testCriteria} dealer = { dealer }/>) }                            
                         </>
                     )
                 )

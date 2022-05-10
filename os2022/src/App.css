@@ -554,3 +554,21 @@ main-page-test-criteria div {
     font-size:1.2rem;
     column-gap: 2px;
 }
+
+
+.rltn-grid-business-salesperson {
+    display:grid;
+    grid-template-columns: repeat(10, 1fr);
+    width:70%;
+    font-size:1.2rem;
+    column-gap: 2px;
+}
+
+
+.rltn-grid-business-makeup {
+    display:grid;
+    grid-template-columns: repeat(9, 1fr);
+    width:70%;
+    font-size:1.2rem;
+    column-gap: 2px;
+}

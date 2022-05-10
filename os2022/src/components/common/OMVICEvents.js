@@ -5,7 +5,7 @@ const OMVICEvents = ({testCriteria}) => {
         DealerRegExpiry } = testCriteria
       
     return (
-        <h1>OMVIC Events</h1>
+        <div>[OMVIC Events] content</div>
     )
 }
 

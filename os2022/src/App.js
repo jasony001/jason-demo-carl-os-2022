@@ -10,7 +10,8 @@ function App() {
     const defaultTestCriteria = {
         portalUser: {
             regStatusId: 'REG',
-            regExpiryDate: 'InNext60Days'
+            regExpiryDate: 'InNext60Days',
+            tc: false
         },
         selectedDealerId:"",
         dealers: [
@@ -30,6 +31,7 @@ function App() {
                 revoked: false,
                 refused: false,
                 isBranch: false,
+                tc: false
             },
             {
                 id: 2,
@@ -47,6 +49,7 @@ function App() {
                 revoked: false,
                 refused: false,
                 isBranch: false,
+                tc: false
             }
         ]
     }
@@ -69,7 +72,7 @@ function App() {
     }
 
     React.useEffect(() => {
-        const savedCriteriaString = localStorage.getItem("testCriteria");
+        const savedCriteriaString = undefined //localStorage.getItem("testCriteria");
         let tc 
         if (savedCriteriaString) {
             let savedCriteria = JSON.parse(savedCriteriaString)
@@ -108,7 +111,7 @@ function App() {
         setTestCriteria(prev => {
             let ut = getUpdatedTestCriteria(prev, name, value)
 
-            localStorage.setItem("testCriteria", JSON.stringify(ut))
+            // localStorage.setItem("testCriteria", JSON.stringify(ut))
             return ut;
         })
     }

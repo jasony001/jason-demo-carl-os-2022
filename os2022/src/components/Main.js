@@ -32,7 +32,7 @@ const Main = ({ testCriteria, pageId, mainComponentChanged, setMenuItems, menuIt
                             { pageId === "s1010" && (<MyProfile testCriteria = {testCriteria}/>) }
                             { pageId === "s1020" && (<MyApplications testCriteria = {testCriteria}/>) }
                             { pageId === "s1030" && (<MyInvoices testCriteria = {testCriteria}/>) }
-                            { pageId === "t30 password" && (<ChangePassword testCriteria = {testCriteria}/>) }
+                            { pageId === "t30" && (<ChangePassword testCriteria = {testCriteria}/>) }
                             { pageId === "t40" && (<OMVICEvents testCriteria = {testCriteria}/>) }
                             { pageId === "t50" && (<Support testCriteria = {testCriteria}/>) }
                             { pageId === "s1040" && (<OmvicCertificate testCriteria = {testCriteria}/>) }

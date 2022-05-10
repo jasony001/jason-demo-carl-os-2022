@@ -1,7 +1,6 @@
 import React from 'react'
 
-const DealershipApplications = ({testCriteria}) => {
-    const dealer = testCriteria.dealers.find(d => d.id + "" === testCriteria.selectedDealerId + "")
+const DealershipApplications = ({testCriteria, dealer}) => {
 
     return (
         <>

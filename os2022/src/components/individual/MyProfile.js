@@ -11,6 +11,7 @@ const MyProfile = ({testCriteria}) => {
     const getTabHeaderClass = (tabIndex) => {
         return tabIndex === selectedTab ? "tab-header tab-header--selected" : "tab-header"
     }
+    
     return (
         <>
             <div className="tab">

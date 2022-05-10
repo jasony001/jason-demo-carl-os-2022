@@ -199,6 +199,10 @@ const TestCriteria = ({testCriteria, testCriteriaChanged}) => {
                                             <div>
                                                 <input type="checkbox" name={`dealer-${d.id}-isBranch`} checked={d.isBranch} onChange={ e => handleChange(e)}/>
                                             </div> 
+                                            <div>T&C or LAT T&C</div>
+                                            <div>
+                                                <input type="checkbox" name={`dealer-${d.id}-tc`} checked={d.tc} onChange={ e => handleChange(e)}/>
+                                            </div> 
                                         </div>
                                     </div>
                                 )

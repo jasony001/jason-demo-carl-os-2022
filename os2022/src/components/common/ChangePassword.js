@@ -1,11 +1,8 @@
-const ChangePassword = ({testCriteria}) => {
-    let { RegStatusID, RegExpiry, RefusedRevoked, RltnInRegDealer, RltnInNotRegDealer, 
-        DealerRegStatusID, DealerOpStatusID, DealerRefusedRevoked, DealerIsBranch,
-        DealerClassID, DealerSubclassID,
-        DealerRegExpiry } = testCriteria
-      
+const ChangePassword = () => {
     return (
-        <h1>Change Password</h1>
+        <div>
+            [Change Password] content
+        </div>
     )
 }
 
