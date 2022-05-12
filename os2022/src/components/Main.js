@@ -7,10 +7,11 @@ import MyInvoices from "./individual/MyInvoices";
 import ChangePassword from "./common/ChangePassword";
 import OMVICEvents from "./common/OMVICEvents";
 import Support from './common/Support'
-import MainPageTestCriteriaSideBar from './test-criteria/MainPageTestCriteriaSideBar'
+import TestCriteriaSideBar from './test-criteria/TestCriteriaSideBar'
 import OmvicCertificate  from "./individual/OmvicCertificate";
 import DeashipMain from './dealership/DealershipMain'
 import { getMenuItemById } from "./nav/menuItemsData";
+import '../styles/main.css'
 
 const Main = ({ testCriteria, pageId, mainComponentChanged, setMenuItems, menuItems, selectDealer }) => {
     return (
@@ -27,7 +28,7 @@ const Main = ({ testCriteria, pageId, mainComponentChanged, setMenuItems, menuIt
                     <>
                         {/* <header className="main-page-header">{ getMenuItemById(pageId).label }</header> */}
                         <div className = "main-page-main">
-                            <MainPageTestCriteriaSideBar testCriteria={testCriteria}/>
+                            <TestCriteriaSideBar testCriteria={testCriteria}/>
                             { pageId === "t00" && (<Home testCriteria = {testCriteria} mainComponentChanged= {mainComponentChanged}/>) }
                             { pageId === "s1010" && (<MyProfile testCriteria = {testCriteria}/>) }
                             { pageId === "s1020" && (<MyApplications testCriteria = {testCriteria}/>) }

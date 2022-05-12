@@ -1,0 +1,69 @@
+
+.test-criterias-body {
+    padding:0.25em;
+    display: flex;
+    flex-wrap: wrap;
+    font-size:1.2rem;
+    position: relative;
+}
+
+.test-criterias-body .fa-clapperboard {
+    position: absolute;
+    top: -1.5em;
+    left: 5em;
+    font-size:2rem;
+    cursor: pointer;
+}
+
+.test-criterias-body .fa-clapperboard:hover::after{
+    font-size: 1.2rem;
+    content: " start demo";
+}
+
+
+@media only screen and (max-width: 480px) {
+    .test-criterias-container {
+        font-size:1rem;
+    }
+}
+
+.test-criterias-section {
+    flex:1;
+    min-width: 320px;
+    border: 1px solid rgb(82, 143, 143);
+    margin: .25em;
+    padding: 0.25em;
+}
+
+.test-criterias-section-title {
+    color: crimson;
+    font-size: 1.5rem;
+    font-style: italic;
+    text-transform: uppercase;
+    margin:0.5em;
+    width: 100%;
+    text-align: left;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 4fr 5fr;
+    position:relative;
+    column-gap: .25em;
+    padding: 0.5em;
+    row-gap: 0.25em;
+}
+
+.profile-grid>*{
+    padding: 0.5em;
+}
+
+.profile-grid > *:nth-child(4n+1),
+.profile-grid > *:nth-child(4n+2){
+    background-color: rgb(249, 249, 244);
+}
+
+.profile-grid > *:nth-child(4n),
+.profile-grid > *:nth-child(4n+3){
+    background-color: rgb(240, 247, 244);
+}

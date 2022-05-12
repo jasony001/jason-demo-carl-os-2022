@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const Home = ({testCriteria, mainComponentChanged}) => {
     let hasODPSRole = testCriteria.dealers.some(d => d.userHasODPSRole)
     let hasDARole = testCriteria.dealers.some(d => d.userIsDA)

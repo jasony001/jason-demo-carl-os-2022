@@ -1,9 +1,9 @@
 import React from "react"
-import MainPageTestCriteriaSideBar from './MainPageTestCriteriaSideBar'
+import TestCriteriaSideBar from './TestCriteriaSideBar'
+import '../../styles/test-criteria.css'
+import TopBanner from "../common/TopBanner"
 
-const TestCriteria = ({testCriteria, testCriteriaChanged}) => {
-
-
+const TestCriteria = ({testCriteria, testCriteriaChanged, selectMainFunction}) => {
     const handleChange = e => {
 
         let key  = e.target.name
@@ -12,7 +12,6 @@ const TestCriteria = ({testCriteria, testCriteriaChanged}) => {
         testCriteriaChanged(key, value)
     }
     
-
     const regStatusIdList = [["REG", "Registered"], ["TERM", "Terminated"], ["NOTREG", "Not Registered"], ["NONE", "None"]]
     const regExiryDateOptions = [
             ["Over60DaysAgo", "Over 60 days ago"],
@@ -33,91 +32,68 @@ const TestCriteria = ({testCriteria, testCriteriaChanged}) => {
         ["WHOLES", "Wholesaler"]
     ]
 
-    
-
     return (
         <>
             {
                 testCriteria && 
-            
-                <div className="test-criteria">
-                    <div className="test-criteria-portal-user">
-                        <div className="test-criteria-section-title">Portal User</div>
-                        <div className='profile-grid'>
-                            <div>Registration Status</div>
-                            <div>
-                                <select name="portalUser-regStatusId" onChange={ e => handleChange(e)} value={testCriteria.portalUser.regStatusId }>
-                                    {
-                                        regStatusIdList.map(s => {
-                                            return (
-                                                <option key={s[0]} value={s[0]}>{s[1]}</option>
-                                            )
-                                        })
-                                    }
-                                </select>
-                            </div>
-                            <div>Registration Expiry Date</div>
-                            <div>
-                                <select name="portalUser-regExpiryDate" onChange={ e => handleChange(e)} value={testCriteria.portalUser.regExpiryDate }>
-                                    {
-                                        regExiryDateOptions.map(s => {
-                                            return (
-                                                <option key={s[0]} value={s[0]}>{s[1]}</option>
-                                            )
-                                        })
-                                    }
-                                </select>
-                            </div>
-                            <div>T&amp;C or LAT T&amp;C</div>
-                            <div>
-                                <input type="checkbox" name="portalUser-tc" checked={testCriteria.portalUser.tc} onChange={ e => handleChange(e)}/>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className="test-criteria-section-title">Selected Dealer</div>
-                        <div style={{display:"flex",paddingLeft:"2em", paddingTop:"1em",paddingBottom:"1em"}}>
-                            
-                            {
-                                testCriteria.dealers.map(d => {
-                                    return (
-                                        <div key={d.id} style={{paddingRight:"1em"}}>
-                                            <label htmlFor={`select-dealer-${d.id}`} name='rbSelectDealer'>{d.name}</label>
-                                            <input type="radio" 
-                                                id={`select-dealer-${d.id}`} 
-                                                name='selectedDealerId' 
-                                                onChange={ e => handleChange(e)}
-                                                checked={testCriteria.selectedDealerId+"" === d.id+""}
-                                                value={d.id}
-                                            ></input>
+                <div className="test-criterias-container">
+                    <div className="test-criterias-body">
+                        <i class="fa-solid fa-clapperboard" onClick={() => selectMainFunction("demo")}></i>
 
-                                        </div>
-                                    )
-                                })
-                            }
-                            <div>
-                                <label htmlFor={`select-dealer-0`} name='rbSelectDealer'>Deselect all</label>
-                                <input type="radio" 
-                                    id={`select-dealer-0`} 
-                                    name='selectedDealerId' 
-                                    onChange={ e => handleChange(e)}
-                                    checked={!testCriteria.selectedDealerId}
-                                    value=""
-                                ></input>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="test-criteria-dealer-section">
+                        <section className="test-criterias-section test-criterias--portal-user">
+                            <div className="test-criterias-section-title">Portal User</div>
+                            <section className="test-criterias-section-main">
+                                <div className='profile-grid'>
+                                    <label>Registration Status</label>                       
+                                    <select name="portalUser-regStatusId" onChange={ e => handleChange(e)} value={testCriteria.portalUser.regStatusId }>
+                                        {
+                                            regStatusIdList.map(s => {
+                                                return (
+                                                    <option key={s[0]} value={s[0]}>{s[1]}</option>
+                                                )
+                                            })
+                                        }
+                                    </select>
+                                    
+                                    <label>Registration Expiry Date</label>
+                                    <select name="portalUser-regExpiryDate" onChange={ e => handleChange(e)} value={testCriteria.portalUser.regExpiryDate }>
+                                        {
+                                            regExiryDateOptions.map(s => {
+                                                return (
+                                                    <option key={s[0]} value={s[0]}>{s[1]}</option>
+                                                )
+                                            })
+                                        }
+                                    </select>
+                                    <div>T&amp;C or LAT T&amp;C</div>
+                                    <div>
+                                        <input type="checkbox" name="portalUser-tc" checked={testCriteria.portalUser.tc} onChange={ e => handleChange(e)}/>
+                                    </div>
+
+                                    <label>Explicitly Selected Dealer</label>
+                                    <select name="selectedDealerId" onChange={ e => handleChange(e)} value={testCriteria.selectedDealerId }>
+                                        <option key={""} value={""}>None</option>
+                                        {
+                                            testCriteria.dealers.filter(d => d.userIsDA || d.userHasODPSRole).map(d => {
+                                                return (
+                                                    <option key={d.id} value={d.id}>{d.name}</option>
+                                                )
+                                            })
+                                        }
+                                    </select>
+                                </div>
+                            </section>
+                        </section>
                         {
                             testCriteria.dealers.map(d => {
                                 return (
-                                    <div className="test-criteria-dealer" key={d.id}>
-                                        <div className="test-criteria-section-title">{ d.name }</div>
+                                    <div className="test-criterias-section test-criteria-dealer" key={d.id}>
+                                        <div className="test-criterias-section-title">{ d.name }</div>
                                         <div className='profile-grid'>
                                             <div>name:</div>
                                             <div><input name={`dealer-${d.id}-name`} value={d.name} onChange={ e => handleChange(e)}></input></div>
                                             <div>Registration Status</div>
-                                            <div>
+                                            
                                                 <select name={`dealer-${d.id}-regStatusId`} 
                                                     onChange={ e => handleChange(e)} value={d.regStatusId }>
                                                     {
@@ -128,9 +104,9 @@ const TestCriteria = ({testCriteria, testCriteriaChanged}) => {
                                                         })
                                                     }
                                                 </select>
-                                            </div>
+                                            
                                             <div>Registration Expiry Date</div>
-                                            <div>
+                                            
                                                 <select name={`dealer-${d.id}-regExpiryDate`} 
                                                     onChange={ e => handleChange(e)} value={d.regExpiryDate }>
                                                     {
@@ -141,7 +117,7 @@ const TestCriteria = ({testCriteria, testCriteriaChanged}) => {
                                                         })
                                                     }
                                                 </select>
-                                            </div>
+                                            
                                             <div>user is DA</div>
                                             <div>
                                                 <input type="checkbox" name={`dealer-${d.id}-userIsDA`} checked={d.userIsDA} onChange={ e => handleChange(e)}/>
@@ -151,7 +127,7 @@ const TestCriteria = ({testCriteria, testCriteriaChanged}) => {
                                                 <input type="checkbox" name={`dealer-${d.id}-userHasODPSRole`} checked={d.userHasODPSRole} onChange={ e => handleChange(e)}/>
                                             </div>
                                             <div>Dealer class</div>
-                                            <div>
+                                            
                                                 <select name={`dealer-${d.id}-dlrClassId`} 
                                                     onChange={ e => handleChange(e)} value={d.dlrClassId }>
                                                     {
@@ -162,7 +138,7 @@ const TestCriteria = ({testCriteria, testCriteriaChanged}) => {
                                                         })
                                                     }
                                                 </select>
-                                            </div>
+                                            
                                             <div>operation status id</div>
                                             <div>
                                                 <label htmlFor={`dealer-${d.id}-opStatusId-active`}  >Active</label>
@@ -208,12 +184,10 @@ const TestCriteria = ({testCriteria, testCriteriaChanged}) => {
                                 )
                             })
                         }
-                        
                     </div>
-
                 </div>
             }
-            <MainPageTestCriteriaSideBar testCriteria={testCriteria}/>
+
         </>
     )
 }

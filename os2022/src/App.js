@@ -4,6 +4,8 @@ import React from 'react'
 import TestCriteria from './components/test-criteria/TestCriteria';
 import Main from './components/Main'
 import { getMenuItems } from './components/nav/menuItemsData';
+import Start from './components/Start'
+import TopBanner from './components/common/TopBanner';
 
 function App() {
 
@@ -16,7 +18,7 @@ function App() {
         selectedDealerId:"",
         dealers: [
             {
-                userIsDA: false,
+                userIsDA: true,
                 userHasODPSRole: false,
                 id: 1,
                 regStatusId: 'REG',
@@ -56,20 +58,12 @@ function App() {
     const [testCriteria, setTestCriteria] = React.useState(undefined)
     const [pageId, setPageId] = React.useState("t00")
     const [menuItems, setMenuItems] = React.useState(getMenuItems(defaultTestCriteria))
-    const [showTestCriteria, setShowTestCriteria] = React.useState(false)
-
+    const [mainFunction, setMainFunction] = React.useState("")
 
     const mainComponentChanged = (newPageId) => {
         setPageId(newPageId)
     }
 
-    const toggleTestCriteria = () => {
-        setShowTestCriteria(prev => !prev)
-    }
-
-    const getSliderClass = () => {
-        return showTestCriteria ? "slider slider--left" : "slider slider--right";
-    }
 
     React.useEffect(() => {
         const clean = localStorage.getItem("clean")
@@ -88,6 +82,8 @@ function App() {
         }
 
         setTestCriteria(tc)
+
+
     }, [])
 
     const getUpdatedTestCriteria = (ct, name, value) => {
@@ -125,16 +121,29 @@ function App() {
         setTestCriteria(prev => { return { ...prev, selectedDealerId: dealerId } } )
     }
 
+    const selectMainFunction = (fn) => {
+        setMainFunction(fn)
+    }
+
     return (
-    <>
-{/* 
-        <div className="App">
-            <TestCriteria testCriteria={testCriteria} testCriteriaChanged={testCriteriaChanged} />
-        </div> */}
-
-
-
         <div className="App" onClick={() => { setMenuItems(getMenuItems(testCriteria)) }}>
+            <TopBanner titleText = { mainFunction ? mainFunction : "Online Services Demo"} selectMainFunction = {selectMainFunction} />
+            <div className='page-main-content'>
+                { !mainFunction && (<Start selectMainFunction = { selectMainFunction } ></Start>) }
+                { mainFunction === 'setTestCriterias' && <TestCriteria testCriteria={testCriteria} testCriteriaChanged={testCriteriaChanged} selectMainFunction = { selectMainFunction } /> } 
+                { mainFunction === 'demo' && 
+                    <Main
+                        testCriteria={testCriteria}
+                        pageId={pageId}
+                        mainComponentChanged={mainComponentChanged}
+                        setMenuItems={setMenuItems}
+                        menuItems={menuItems}
+                        selectDealer = { selectDealer }
+                    />
+                 }
+            </div>
+
+        {/* <div className="App" onClick={() => { setMenuItems(getMenuItems(testCriteria)) }}>
             {showTestCriteria && <TestCriteria testCriteria={testCriteria} testCriteriaChanged={testCriteriaChanged} />}
             <div className={getSliderClass()} onClick={toggleTestCriteria}></div>
             
@@ -148,9 +157,9 @@ function App() {
                     selectDealer = { selectDealer }
                 />
             }
-        </div>
+        </div> */}
 
-    </>
+    </div>
 
     );
 }
