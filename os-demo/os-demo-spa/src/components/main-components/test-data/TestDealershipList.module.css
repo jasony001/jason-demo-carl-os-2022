@@ -1,0 +1,23 @@
+
+
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table.dlr { 
+		display: block; 
+	}
+	
+	/*
+	Label the data
+	*/
+	table.dlr td:nth-of-type(2):before { content: "Party Id"; }
+	table.dlr td:nth-of-type(3):before { content: "Dealer Name"; }
+	table.dlr td:nth-of-type(4):before { content: "Dealer Class"; }
+	table.dlr td:nth-of-type(5):before { content: "Dealer Type"; }
+	table.dlr td:nth-of-type(6):before { content: "Reg. Status"; }
+	table.dlr td:nth-of-type(7):before { content: "Reg. Expiry Date"; }
+}
+

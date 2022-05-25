@@ -1,0 +1,17 @@
+.test-data-set-info {
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    text-transform: capitalize;
+    align-items: center;
+    margin: 2em 0;
+}
+
+.test-data-set-info-name {
+    font-size: 2rem;
+    margin: 0 1em;
+}
+
+.test-data-set-info-tester {
+    font-size: 1rem;
+}
