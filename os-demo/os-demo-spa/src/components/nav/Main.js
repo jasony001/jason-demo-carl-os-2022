@@ -9,8 +9,8 @@ import Home from "../main-components/Home";
 import IndividualMain from '../main-components/individual/IndividualMain'
 import DealershipMain from '../main-components/dealership/DealershipMain'
 import AccountMain from '../main-components/account/AccountMain'
-import OMVICEvents from "../main-components/dealership/OMVICEvents";
-import Support from "../main-components/dealership/Support";
+import OMVICEvents from "../main-components/OMVICEvents";
+import Support from "../main-components/Support";
 import TestDataSetMain from "../main-components/test-data/TestDataSetMain";
 
 function Main() {

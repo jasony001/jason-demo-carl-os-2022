@@ -13,7 +13,7 @@ function App() {
     return (
         <TestDataContextProvider>
             <Switch>
-                <Route path="/Start" exact>
+                <Route path="/" exact>
                     <Start />
                 </Route>
                 <Route path="/">
