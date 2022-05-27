@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import IndividualProfile from "./IndividualProfile";
 import IndividualApplications from "./IndividualApplications";
 import IndividualInvoices from "./IndividualInvoices";
+import IndividualOMVICCertificate from "./IndividualOMVICCertificate";
 
 const IndividualMain = () => {
     return (
@@ -15,6 +16,9 @@ const IndividualMain = () => {
             </Route>
             <Route path="/Individual/Invoices" exact>
                 <IndividualInvoices />
+            </Route>
+            <Route path="/Individual/OMVICCertificate" exact>
+                <IndividualOMVICCertificate />
             </Route>
             <Route path="/Individual">
                 <Redirect to="/Individual/Profile" />

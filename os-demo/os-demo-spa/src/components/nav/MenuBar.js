@@ -1,16 +1,31 @@
 import React from "react";
 import styles from "./MenuBar.module.css";
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import { getMenuItems } from "./menu-items-data";
+import testDataContext from "../../store/test-data-context";
 
 const MenuBar = (initHide) => {
+    const [expandedMenuItemId, setExpandedMenuItemId] = React.useState("");
+    const { testData, setTestData } = React.useContext(testDataContext);
+
+    const pathname = useLocation().pathname;
+
+    const menuItems = getMenuItems(testData);
+
+    const expandSubMenu = (menuItemId) => {
+        if (expandedMenuItemId && expandedMenuItemId === menuItemId)
+            setExpandedMenuItemId("");
+        else {
+            let menuItem = menuItems.find((m) => m.id === menuItemId);
+            if (menuItem) {
+                setExpandedMenuItemId(menuItem.id);
+            }
+        }
+    };
+
     const [hideOnSmallScreen, setHideOnSmallScreen] = React.useState(initHide);
-    console.log("rendering menu");
-    console.log(hideOnSmallScreen);
+
     const toggleUl = () => {
-        console.log(hideOnSmallScreen);
-        console.log(
-            hideOnSmallScreen ? styles["menu-bar-hide-on-small-screen"] : ""
-        );
         setHideOnSmallScreen((prev) => !prev);
     };
     const hamburgerClassList = `fa-solid fa-bars ${styles["hamburger"]}`;
@@ -24,21 +39,57 @@ const MenuBar = (initHide) => {
                         ? styles["menu-bar-hide-on-small-screen"]
                         : ""
                 }
-                onClick={() => {
-                    setHideOnSmallScreen(true);
-                }}
+onClick={e=>{setHideOnSmallScreen(e.target.tagName.toUpperCase() === "A")}}
             >
-                <li>
-                    <Link to="/Home">Home</Link>
-                </li>
-                <li>
-                    <Link to="/Individual">Individual</Link>
-                </li>
-                <li>Dealership</li>
-                <li>Account</li>
-                <li>OMVIC Events</li>
-                <li>Support</li>
-                <li>Test Data</li>
+                {getMenuItems(testData).map((tm) => (
+                    <li key={tm.id} onClick={() => expandSubMenu(tm.id)}>
+                        <div>
+                            <div>
+                                {tm.link ? (
+                                    <NavLink
+                                        activeClassName={styles.active}
+                                        to={tm.link}
+                                    >
+                                        {tm.label}
+                                    </NavLink>
+                                ) : (
+                                    <>
+                                        <span
+                                            className={
+                                                tm.submenu.some(
+                                                    (sm) => sm.link === pathname
+                                                )
+                                                    ? styles.active
+                                                    : ""
+                                            }
+                                        >
+                                            {`${tm.label} `} 
+                                        </span>
+                                        <>
+                                            {expandedMenuItemId === tm.id
+                                                ? <i className="fa-solid fa-angle-up"></i>
+                                                : <i className="fa-solid fa-angle-down"></i>}
+                                        </>
+                                    </>
+                                )}
+                            </div>
+
+                            {expandedMenuItemId === tm.id && (
+                                <div className={styles.submenu}>
+                                    {tm.submenu.map((sm) => (
+                                        <NavLink
+                                            key={sm.id}
+                                            activeClassName={styles.active}
+                                            to={sm.link}
+                                        >
+                                            {sm.label}
+                                        </NavLink>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    </li>
+                ))}
             </ul>
         </div>
     );

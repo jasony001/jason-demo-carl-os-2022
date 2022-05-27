@@ -9,15 +9,27 @@ const TestDataContextProvider = (props) => {
             data: null,
             lookupData: null,
         },
+        loggedInUser: null,
+        selectedDealerPartyId: null,
     });
 
     React.useEffect(() => {
         testDataApi.loadLocalSavedTestData().then((d) => {
+            const party = d.data.individuals[0];
+            const loggedInUser = {
+                partyId: party.partyId,
+                firstName: party.firstName,
+                lastName: party.lastName,
+            };
+
             let localSavedTestDataSet = {
                 status: d.data ? "OK" : "EMPTY",
                 dataSet: { ...d.data },
+                loggedInUser: loggedInUser,
                 lookupData: { ...d.lookupData },
             };
+
+
             setTestData(localSavedTestDataSet);
         });
     }, []);

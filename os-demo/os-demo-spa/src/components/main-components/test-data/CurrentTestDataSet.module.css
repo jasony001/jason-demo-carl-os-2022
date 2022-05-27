@@ -15,3 +15,9 @@
 .test-data-set-info-tester {
     font-size: 1rem;
 }
+
+.test-data-relationships, .test-data-legal-entities, .test-data-dealerships, .test-data-individuals {
+    margin-bottom:1.5em;
+}
+
+

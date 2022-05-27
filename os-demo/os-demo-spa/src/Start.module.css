@@ -7,6 +7,7 @@
     margin:0.5em 1.5em;
     font-family: 'PT Sans Narrow', sans-serif;
     font-size:1.2rem;
+    text-align: center;
 }
 
 .start h4 {
@@ -26,4 +27,13 @@
     background-color: rgb(25, 44, 249);
     color:white;
     border-radius: 10px;
+}
+
+.start-intro, .start-usages {
+    border-radius: 10px;
+    border-color: blue;
+    border-style: solid;
+    border-width: 1px;
+    margin-top:10px;
+    padding:.5em 1em;
 }

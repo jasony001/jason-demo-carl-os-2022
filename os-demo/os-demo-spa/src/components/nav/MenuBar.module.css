@@ -1,18 +1,27 @@
-.menu-bar{
+.menu-bar {
     display: flex;
 }
 .menu-bar ul {
     display: flex;
     list-style-type: none;
     align-items: flex-start;
-    margin:0;
+    margin: 0;
     text-align: center;
-    font-size:1.5rem;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    z-index:2;
 }
-
+/* 
 .menu-bar ul li {
+    margin: 0.5em;
+} */
+
+.menu-bar ul li>div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     margin:0.5em;
-    text-decoration: underline;
+    position:relative;
 }
 
 .menu-bar ul.menu-bar-hide-on-small-screen {
@@ -20,38 +29,76 @@
 }
 
 .hamburger {
-    display:none;
+    display: none;
 }
+
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+.submenu {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: .5em;
+    position:absolute;
+    top:1.5em;
+    left:0;
+    width:200px;
+    padding:.25em .5em;
+    background-color: rgb(20, 107, 220);
+}
+
 
 @media only screen and (max-width: 1079px) {
     .menu-bar ul.menu-bar-hide-on-small-screen {
-      display:none;
+        display: none;
     }
-  }
-
+}
 
 @media only screen and (max-width: 1079px) {
     .menu-bar ul {
-      flex-direction: column;
-      margin-left: 0;
-      position:absolute;
-      left:-1.5em;
-      top:3em;
-      background-color: rgb(23, 96, 159);
+        flex-direction: column;
+        margin-left: 0;
+        position: absolute;
+        left: -1.5em;
+        top: 3em;
+        background-color: rgb(20, 107, 220);
+        
     }
 
     .hamburger {
-        display:block;
+        display: block;
         position: absolute;
-        left:0;
-        top:0;
+        left: .25em;
+        top: .25em;
+        font-size: 1.5em;;
     }
-  }
 
-  a:hover {
-      color:white;
-  }
-
-  a:visited {
-    color:white;
+    .submenu {
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: .5em;
+        
+        width:200px;
+        padding:.25em .5em;
+        background-color: rgb(20, 107, 220);
+        opacity: 1;
+        z-index:3;
+    }
 }
