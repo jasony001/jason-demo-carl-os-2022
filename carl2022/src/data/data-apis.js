@@ -31,10 +31,8 @@ const saveRecord = async (collectionName, keyColumnName, rec) => {
 // }
 
 const getRltnList = async (indPartyId, dlrPartyId, legPartyId, rltnCategory) => {
-    console.log(`dataAPIs.getRltnList(${indPartyId}, ${dlrPartyId}, ${legPartyId}, 'ID')`)
     let rltnList = await FirebaseDataAPIs.getRltnList(indPartyId, dlrPartyId, legPartyId, rltnCategory)
 
-    console.log(rltnList)
     return rltnList;
 }
 

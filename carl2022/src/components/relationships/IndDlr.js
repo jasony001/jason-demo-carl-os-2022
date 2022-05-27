@@ -35,7 +35,6 @@ const IndDlrRltn = ( {indPartyId, dlrPartyId, lookupData} ) => {
     React.useEffect(() => {
         dataAPIs.getRltnList(indPartyId, dlrPartyId, undefined, 'ID')
         .then(d => {
-            console.log(d)
             setRltnList(d)
 
             d.forEach(r => {

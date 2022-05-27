@@ -26,8 +26,7 @@ const IndProfile = ({ data, lookupData, defaultMode, cancelAddingNewInd }) => {
     }, [])
 
     const handleChange = e => {
-        console.log(e.target)
-        console.log(updatedInd[e.target.name])
+
         setUpdatedInd(prev => {
             return {...prev, [e.target.name] : e.target.value.toUpperCase()}
         })
