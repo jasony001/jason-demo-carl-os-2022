@@ -14,6 +14,8 @@ const getMenuItems = (testData) => {
             r.dlrPartyId
     );
 
+    console.log(DARoles)
+
     let ODPSRoles = testData.dataSet.partyRltns.filter(
         (r) =>
             r.indPartyId === loggedInUser.partyId &&
@@ -23,9 +25,12 @@ const getMenuItems = (testData) => {
 
     let dealerships = testData.dataSet.dealerships.filter(
         (d) =>
-            DARoles.some((r) => r.dealerPartyId === d.partyId) ||
+            DARoles.some((r) => r.dlrPartyId === d.partyId) ||
             ODPSRoles.some((r) => r.legPartyId === d.legPartyId)
     );
+
+    console.log(dealerships)
+
 
     let selectedDealer = testData.selectedDealerId
         ? testData.dataSet.dealerships.find(
@@ -135,22 +140,22 @@ const getMenuItems = (testData) => {
         },
         { id: "t40", label: "omvic events", link: "/omvicevents", display:true,submenu: [] },
         { id: "t50", label: "support", link: "/support", display:true,submenu: [] },
-        { id: "t60", label: "Test Data", display:true,submenu: [
+        { id: "t60", label: "Test Data Set", display:true,submenu: [
             {
                 id: "s6010",
-                label: "Setup test data",
+                label: "Current test data",
                 link: "/TestDataSet/Setup",
                 display: true,
             },
             {
                 id: "s6020",
-                label: "Create test data",
+                label: "Create",
                 link: "/TestDataSet/Create",
                 display: true,
             },
             {
                 id: "s6030",
-                label: "Saved test data",
+                label: "Saved test data set",
                 link: "/TestDataSet/Select",
                 display: true,
             },
