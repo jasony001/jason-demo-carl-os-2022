@@ -21,7 +21,7 @@ namespace os_demo_api.DBModels
         public bool? UsesOmsWeb { get; set; }
         public int? RegNumber { get; set; }
         public string RegStatusId { get; set; }
-        public string RegExpiydateId { get; set; }
+        public string RegExpirydateId { get; set; }
         public bool? Tc { get; set; }
 
         public virtual TestDataSet TestDataSet { get; set; }

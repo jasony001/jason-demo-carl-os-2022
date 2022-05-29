@@ -20,7 +20,7 @@ const emptyTestData = {
         partyRltnBranchLookup: [],
         partyRltnRoleLookup: [],
         partyRltnRoleCatLookup: [],
-        regExpiydateLookup: [],
+        regExpirydateLookup: [],
         regStatusLookup: [],
     },
 };

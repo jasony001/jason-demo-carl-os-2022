@@ -27,7 +27,8 @@ namespace os_demo_api.Controllers
 
         public LookupData Get()
         {
-            LookupData lookupData = new LookupData{
+            LookupData lookupData = new LookupData
+            {
                 dlrClassLookup = _db.LuDlrClasses.ToArray(),
                 dlrTypeLookup = _db.LuDlrTypes.ToArray(),
                 dlrOpStatusLookup = _db.LuDlrOpStatus.ToArray(),
@@ -36,11 +37,17 @@ namespace os_demo_api.Controllers
                 partyRltnBranchLookup = _db.LuPartyRltnBranches.ToArray(),
                 partyRltnRoleLookup = _db.LuPartyRltnRoles.ToArray(),
                 partyRltnRoleCatLookup = _db.LuPartyRltnRoleCats.ToArray(),
-                regExpiydateLookup = _db.LuRegExpiydates.ToArray(),
-                regStatusLookup = _db.LuRegStatus.ToArray()
+                regExpirydateLookup = _db.LuRegExpirydates.ToArray(),
+                regStatusLookup = _db.LuRegStatus.ToArray(),
+                genderLookup = new Models.luGender[]
+                {
+                     new Models.luGender { GenderId = "M", Description ="Male"},
+                     new Models.luGender { GenderId = "F", Description ="Female"},
+                     new Models.luGender { GenderId = "X", Description ="Rather not say"}
+                }
             };
 
-            
+
             return lookupData;
         }
     }

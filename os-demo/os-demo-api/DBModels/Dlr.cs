@@ -20,7 +20,7 @@ namespace os_demo_api.DBModels
         public bool? IsPrivateSale { get; set; }
         public int? RegNumber { get; set; }
         public string RegStatusId { get; set; }
-        public string RegExpiydateId { get; set; }
+        public string RegExpirydateId { get; set; }
         public bool? Tc { get; set; }
 
         public virtual LuDlrClass DlrClass { get; set; }

@@ -14,7 +14,7 @@ namespace os_demo_api.DBModels
 
         public string DlrTypeId { get; set; }
         public string Description { get; set; }
-        public string DlrClassIds { get; set; }
+        public string DlrClassId { get; set; }
 
         public virtual ICollection<Dlr> Dlrs { get; set; }
     }

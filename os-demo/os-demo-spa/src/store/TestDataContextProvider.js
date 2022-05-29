@@ -14,23 +14,48 @@ const TestDataContextProvider = (props) => {
     });
 
     React.useEffect(() => {
-        testDataApi.loadLocalSavedTestData().then((d) => {
-            const party = d.data.individuals[0];
-            const loggedInUser = {
-                partyId: party.partyId,
-                firstName: party.firstName,
-                lastName: party.lastName,
-            };
+        // 1. load lookup data
+        // 2. load saved data set list
+        // 3. if localStorage has item testDataSetId, load data
+        //     if retrieve failed, localStorage remove item
+        const lastUsedDataSetId = localStorage.getItem("testDataSetId");
+        let promiseArray = [
+            testDataApi.getLookupDataFromDB(),
+            testDataApi.getAllTestDataSets(),
+        ];
+        if (lastUsedDataSetId)
+            promiseArray = [
+                ...promiseArray,
+                testDataApi.getTestDataSetFromDB(lastUsedDataSetId),
+            ];
 
-            let localSavedTestDataSet = {
-                status: d.data ? "OK" : "EMPTY",
-                dataSet: { ...d.data },
-                loggedInUser: loggedInUser,
-                lookupData: { ...d.lookupData },
-            };
+        Promise.all(promiseArray).then((d) => {
+            let [lookupData, allDataSets, currentDataSet] = [...d];
+            if (!currentDataSet || !currentDataSet.individuals || currentDataSet.individuals.length <= 0){
+                localStorage.removeItem("testDataSetId");
+                setTestData({
+                    status: "EMPTY",
+                    dataSet: undefined,
+                    loggedInUser: undefined,
+                    lookupData: { ...lookupData },
+                    allTestDataSets: allDataSets
+                });
+            } else {
+                const party = currentDataSet.individuals[0];
+                const loggedInUser = {
+                    partyId: party.partyId,
+                    firstName: party.firstName,
+                    lastName: party.lastName,
+                };
 
-
-            setTestData(localSavedTestDataSet);
+                setTestData( {
+                    status: "OK",
+                    dataSet: { ...currentDataSet },
+                    loggedInUser: loggedInUser,
+                    lookupData: { ...lookupData },
+                    allTestDataSets: allDataSets
+                });
+            }
         });
     }, []);
 

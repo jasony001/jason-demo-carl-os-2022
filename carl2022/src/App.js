@@ -35,15 +35,6 @@ function App() {
         { collectionName: "partyrltnList", keyColumnName: "PartyRltnID" },
     ];
 
-    const loadAllLookupData = () => {
-        let allTestData = {};
-        if (!localStorage.getItem("lookupData")) {
-            dataAPIs.loadAllData(dataCollectionList).then((d) => {
-                localStorage.setItem("lookupData", JSON.stringify(d));
-            });
-        } else {
-        }
-    };
 
     const [lookupData, setLookupData] = React.useState({
         luDlrClassList: [

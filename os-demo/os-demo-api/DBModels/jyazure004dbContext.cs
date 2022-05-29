@@ -28,7 +28,7 @@ namespace os_demo_api.DBModels
         public virtual DbSet<LuPartyRltnBranch> LuPartyRltnBranches { get; set; }
         public virtual DbSet<LuPartyRltnRole> LuPartyRltnRoles { get; set; }
         public virtual DbSet<LuPartyRltnRoleCat> LuPartyRltnRoleCats { get; set; }
-        public virtual DbSet<LuRegExpiydate> LuRegExpiydates { get; set; }
+        public virtual DbSet<LuRegExpirydate> LuRegExpirydates { get; set; }
         public virtual DbSet<LuRegStatu> LuRegStatus { get; set; }
         public virtual DbSet<PartyRltn> PartyRltns { get; set; }
         public virtual DbSet<TestDataSet> TestDataSets { get; set; }
@@ -76,7 +76,7 @@ namespace os_demo_api.DBModels
 
                 entity.Property(e => e.EwhideFlag).HasColumnName("EWHideFlag");
 
-                entity.Property(e => e.RegExpiydateId)
+                entity.Property(e => e.RegExpirydateId)
                     .HasMaxLength(6)
                     .IsUnicode(false);
 
@@ -143,7 +143,7 @@ namespace os_demo_api.DBModels
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
-                entity.Property(e => e.RegExpiydateId)
+                entity.Property(e => e.RegExpirydateId)
                     .HasMaxLength(6)
                     .IsUnicode(false);
 
@@ -262,7 +262,7 @@ namespace os_demo_api.DBModels
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.DlrClassIds)
+                entity.Property(e => e.DlrClassId)
                     .HasMaxLength(100)
                     .IsUnicode(false)
                     .HasColumnName("DlrClassIDs");
@@ -348,14 +348,14 @@ namespace os_demo_api.DBModels
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<LuRegExpiydate>(entity =>
+            modelBuilder.Entity<LuRegExpirydate>(entity =>
             {
-                entity.HasKey(e => e.RegExpiydateId)
+                entity.HasKey(e => e.RegExpirydateId)
                     .HasName("PK__luRegExp__DC06EC2A7DF11F2F");
 
-                entity.ToTable("luRegExpiydate");
+                entity.ToTable("luRegExpirydate");
 
-                entity.Property(e => e.RegExpiydateId)
+                entity.Property(e => e.RegExpirydateId)
                     .HasMaxLength(6)
                     .IsUnicode(false);
 

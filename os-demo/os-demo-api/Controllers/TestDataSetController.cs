@@ -15,9 +15,9 @@ namespace os_demo_api.Controllers
     {
         private jyazure004dbContext _db;
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<TestDataSetController> _logger;
 
-        public TestDataSetController(ILogger<WeatherForecastController> logger, jyazure004dbContext db)
+        public TestDataSetController(ILogger<TestDataSetController> logger, jyazure004dbContext db)
         {
             _logger = logger;
             _db = db;
@@ -38,17 +38,17 @@ namespace os_demo_api.Controllers
                     TestDataSetId = i.TestDataSetId,
                     FirstName = i.FirstName,
                     LastName = i.LastName,
-                    BirthDate = i.BirthDate,
+                    BirthDate = i.BirthDate.HasValue ? i.BirthDate.Value.ToString("yyyy-MM-dd") : "",
                     Email = i.Email,
                     Gender = i.Gender,
                     StudentId = i.StudentId,
                     CertRequired = i.CertRequired,
-                    CertDate = i.CertDate,
-                    CertRequireDate = i.CertRequireDate,
+                    CertDate = i.CertDate.HasValue ? i.CertDate.Value.ToString("yyyy-MM-dd") : "",
+                    CertRequireDate = i.CertRequireDate.HasValue ? i.CertRequireDate.Value.ToString("yyyy-MM-dd") : "",
                     UsesOmsWeb = i.UsesOmsWeb,
                     RegNumber = i.RegNumber,
                     RegStatusId = i.RegStatusId,
-                    RegExpiydateId = i.RegExpiydateId,
+                    RegExpirydateId = i.RegExpirydateId,
                     Tc = i.Tc,
                 }
             ).ToArray();
@@ -69,7 +69,7 @@ namespace os_demo_api.Controllers
                     IsPrivateSale = d.IsPrivateSale,
                     RegNumber = d.RegNumber,
                     RegStatusId = d.RegStatusId,
-                    RegExpiydateId = d.RegExpiydateId,
+                    RegExpirydateId = d.RegExpirydateId,
                     Tc = d.Tc,
                 }).ToArray();
 
@@ -82,7 +82,9 @@ namespace os_demo_api.Controllers
                 LegTypeId = l.LegTypeId
             }).ToArray();
 
-            Models.PartyRltn[] partyRltns = _db.PartyRltns.Where(r => r.TestDataSetId == id).Select(r =>
+            Models.PartyRltn[] partyRltns = _db.PartyRltns
+                .Where(r => r.TestDataSetId == id && r.PartyRltnRoleId != "DLOWN")
+                .Select(r =>
                 new Models.PartyRltn
                 {
                     PartyRltnId = r.PartyRltnId,
@@ -178,6 +180,5 @@ namespace os_demo_api.Controllers
 
 
         }
-
     }
 }

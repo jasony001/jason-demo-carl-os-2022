@@ -1,0 +1,29 @@
+
+.dealership-details {
+    padding:1em;
+}
+
+.dealership-form {
+    display:grid;
+    grid-template-columns: 2fr 3fr;
+    max-width: 600px;
+    margin:1em 0;
+    font-size: 1.5em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(5, 5, 96);
+    padding: .5em;
+    row-gap: .25em;
+}
+
+.dealership-form input[type=checkbox]{
+    width:30px;
+}
+
+.dealership-form button {
+    background-color: rgb(46, 46, 224);
+    color:white;
+    font-size: 1.5rem;
+    padding: .25em 1em;
+    border-radius:8px;
+}

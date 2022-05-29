@@ -15,6 +15,9 @@ namespace os_demo_api.Models
         public int? DlrPartyId { get; set; }
         public int? LegPartyId { get; set; }
         public string PartyRltnRoleId { get; set; }
+
+        public string PartyRltnRoleCatId { get; set; }
+
         public string PartyRltnBranchId { get; set; }
         public bool? IsReviewed { get; set; }
         public bool? IsPersonInCharge { get; set; }

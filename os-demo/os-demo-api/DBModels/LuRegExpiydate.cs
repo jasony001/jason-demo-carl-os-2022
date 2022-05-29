@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace os_demo_api.DBModels
 {
-    public partial class LuRegExpiydate
+    public partial class LuRegExpirydate
     {
-        public string RegExpiydateId { get; set; }
+        public string RegExpirydateId { get; set; }
         public string Description { get; set; }
     }
 }
