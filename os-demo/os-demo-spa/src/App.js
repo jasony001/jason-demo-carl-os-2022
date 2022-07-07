@@ -6,10 +6,13 @@ import { Route, Switch } from "react-router-dom";
 
 import TestDataContextProvider from "./store/TestDataContextProvider";
 
+
 // App is not wrapped inside TestDataContextProvider, has no access to the context
 // need to wrap something
 
 function App() {
+
+
     return (
 
         <TestDataContextProvider>

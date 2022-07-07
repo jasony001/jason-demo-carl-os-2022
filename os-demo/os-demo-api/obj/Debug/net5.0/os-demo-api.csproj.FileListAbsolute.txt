@@ -70,3 +70,9 @@
 /Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/bin/Debug/net5.0/ref/os-demo-api.dll
 /Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/obj/Debug/net5.0/os-demo-api.csprojAssemblyReference.cache
 /Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/obj/Debug/net5.0/staticwebassets/os-demo-api.StaticWebAssets.xml
+/Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/bin/Debug/net5.0/publish/publish/web.config
+/Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/bin/Debug/net5.0/publish/publish/appsettings.Development.json
+/Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/bin/Debug/net5.0/publish/publish/appsettings.json
+/Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/bin/Debug/net5.0/publish/publish/global.json
+/Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/bin/Debug/net5.0/publish/publish/os-demo-api.deps.json
+/Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/bin/Debug/net5.0/publish/publish/os-demo-api.runtimeconfig.json

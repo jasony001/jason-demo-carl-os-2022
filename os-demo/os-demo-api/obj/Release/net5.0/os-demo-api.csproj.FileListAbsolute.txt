@@ -64,3 +64,9 @@
 /Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/bin/Release/net5.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 /Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/bin/Release/net5.0/Newtonsoft.Json.dll
 /Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/bin/Release/net5.0/Newtonsoft.Json.Bson.dll
+/Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/bin/Release/net5.0/publish/web.config
+/Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/bin/Release/net5.0/publish/appsettings.Development.json
+/Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/bin/Release/net5.0/publish/appsettings.json
+/Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/bin/Release/net5.0/publish/global.json
+/Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/bin/Release/net5.0/publish/os-demo-api.deps.json
+/Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/bin/Release/net5.0/publish/os-demo-api.runtimeconfig.json

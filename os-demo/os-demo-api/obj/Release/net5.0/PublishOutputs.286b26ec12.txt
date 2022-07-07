@@ -1,6 +1,12 @@
+/Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/publish/publish/web.config
 /Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/publish/appsettings.Development.json
 /Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/publish/appsettings.json
 /Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/publish/global.json
+/Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/publish/publish/appsettings.Development.json
+/Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/publish/publish/appsettings.json
+/Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/publish/publish/global.json
+/Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/publish/publish/os-demo-api.deps.json
+/Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/publish/publish/os-demo-api.runtimeconfig.json
 /Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/publish/os-demo-api.dll
 /Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/publish/os-demo-api.runtimeconfig.json
 /Volumes/SSDT1T-Coding/git/jasony001/jason-demo-carl-os-2022/os-demo/os-demo-api/publish/os-demo-api.pdb
